@@ -31,8 +31,10 @@ let amicableNumbers upper_bound =
 
     seq {
         for a in 1..upper_bound do
-            for b in a..upper_bound do
-                if precomputedDValues[a - 1] = b && precomputedDValues[b - 1] = a then
+            let b = precomputedDValues.[a - 1]
+
+            if b > a && b <= upper_bound then
+                if precomputedDValues.[b - 1] = a then
                     yield a
                     yield b
     }
