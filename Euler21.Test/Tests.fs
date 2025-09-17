@@ -2,7 +2,9 @@
 
 open System
 open Xunit
+open Program
 
 [<Fact>]
-let ``My test`` () =
-    Assert.True(true)
+let ``Test from task description`` () =
+    Assert.True(isAmicablePair (220, 284))
+    Assert.False(isAmicablePair (220, 220))
