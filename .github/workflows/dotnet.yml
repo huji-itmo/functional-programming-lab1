@@ -30,7 +30,7 @@ jobs:
     - name: Run FSharpLint
       run: dotnet fsharplint lint --recursive .
     - name: Check formatting with Fantomas
-      run: fantomas --check --recurse .
+      run: find . -type f -name "*.fs" -not -path "*obj*" | xargs fantomas --check -v d
     - name: Build
       run: dotnet build --no-restore
     - name: Test
