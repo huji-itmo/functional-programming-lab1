@@ -2,7 +2,7 @@
 
 let getDivisors (num: int) =
     if num = 1 then
-        seq { }
+        seq { 1 }
     else
         assert (num >= 1)
 
