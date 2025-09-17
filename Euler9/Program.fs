@@ -1,6 +1,4 @@
-﻿open System
-
-let checkPythogoreanTriple (a: int, b: int, c: int) = a * a + b * b = c * c
+﻿let checkPythogoreanTriple (a: int, b: int, c: int) = a * a + b * b = c * c
 
 let findTriplet () =
     seq {
@@ -12,8 +10,6 @@ let findTriplet () =
                     yield a, b, c
     }
     |> Seq.tryHead
-
-
 
 match findTriplet () with
 | Some(a, b, c) ->
