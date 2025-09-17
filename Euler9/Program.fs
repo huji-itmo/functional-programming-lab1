@@ -11,8 +11,14 @@ let findTriplet () =
     }
     |> Seq.tryHead
 
-match findTriplet () with
+let stopwatch = System.Diagnostics.Stopwatch.StartNew()
+let result = findTriplet ()
+stopwatch.Stop()
+
+match result with
 | Some(a, b, c) ->
     printfn $"Pythagorean triplet: {a} {b} {c}"
     printfn $"Product: {a * b * c}"
 | None -> printfn "No triplet found"
+
+printfn $"Execution Time: {stopwatch.ElapsedMilliseconds} ms"
