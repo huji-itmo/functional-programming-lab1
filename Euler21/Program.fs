@@ -6,7 +6,7 @@ let getDivisors (num: int) =
     else
         assert (num >= 1)
 
-        let upper_bound = num |> float |> sqrt |> ceil |> int
+        let upper_bound = int (sqrt (float num))
 
         seq {
             yield 1
@@ -16,7 +16,7 @@ let getDivisors (num: int) =
                     yield divisor
                     let divisor2 = num / divisor
 
-                    if divisor <> divisor2 && divisor2 <> num then
+                    if divisor <> divisor2 then
                         yield divisor2
         }
 
